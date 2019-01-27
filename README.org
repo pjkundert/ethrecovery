@@ -1,0 +1,12 @@
+* Ethereum JSON Keystore Password Recovery
+
+If you know all of the possible component parts of your password, this script will generate all
+combinations and permutations of them using =combinate.py=, and attempt to open the provided JSON
+keystore file (optionally, with the specified number of parallel threads).
+
+For example, lets say that you know that your password was some combination of several words, but
+you don't know which ones or in what order:
+
+#+BEGIN_SRC bash
+$ ./combinate.py horse stable correct battery mouse  | ./attempt.py keystore/*.test 8
+#+END_SRC
