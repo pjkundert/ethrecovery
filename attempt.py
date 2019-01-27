@@ -1,5 +1,18 @@
 #!/usr/bin/env python3
 
+from __future__ import print_function
+
+# 
+# Read a stream of passwords provided on separate lines to stdin, and attempt to unlock the JSON
+# keystore file named on the command line.  A number of parallel threads to use can be provided
+# after the JSON keystore file name.
+# 
+# EXAMPLE
+# 
+# Use 8 threads to attempt to open the JSON file "keystore/*.test"
+# 
+#     ... | ./attempt.py keystore/*.test 8
+# 
 import sys
 import json
 from ethereum.tools.keys import decode_keystore_json
@@ -47,9 +60,10 @@ def attempt(w, pw, verbose):
         return None
 
 verbose=True
-def __main__():
+
+def main():
     w = tryopen( sys.argv[1] )
-    print( "account: %s", json.dumps( w, indent=4 ))
+    print( "account: %s" % json.dumps( w, indent=4 ))
 
     try:
         if len( sys.argv ) > 2:
@@ -66,4 +80,4 @@ def __main__():
         pass
         
 if __name__ == "__main__":
-    __main__()
+    main()
