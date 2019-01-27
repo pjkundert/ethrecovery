@@ -12,7 +12,7 @@ recovery using 8 thread:
 
 #+BEGIN_SRC bash
 $ pip3 install -r requirements.txt
-$ ./combinate.py horse stable correct battery mouse  | ./attempt.py keystore/*.test 8
+$ ./combinate.py horse staple correct battery mouse  | ./attempt.py keystore/*.test 8
 account: {
     "address": "3f90507e346bf538f2dccdd914f368008fa42997",
     "crypto": {
